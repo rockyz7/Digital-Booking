@@ -1,0 +1,98 @@
+@import "../Home/Suggested.module.css";
+
+.reserveCardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+  background-color: #dfe4ea;
+  padding: 20px 50px 50px;
+}
+
+.reserveCardContainer h3 {
+  font-size: 1.5rem;
+  grid-column: span 3;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  color: #dfe4ea;
+  padding: 5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.reserveCardContainer h3:hover {
+  cursor: pointer;
+}
+
+.reserveCardContainer hr {
+  grid-column: span 3;
+  margin-bottom: 50px;
+  border: solid 1px #f0572d;
+  display: none;
+}
+
+.cardContainer > section {
+  grid-template-rows: repeat(1, 250px);
+}
+
+.reserveCardContainer .productCategory {
+  display: none;
+}
+
+.noRes {
+  font-size: 18px;
+}
+
+.reserveCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: white;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: -2px 8px 17px -4px rgb(134, 133, 133);
+  -webkit-box-shadow: -2px 8px 17px -4px rgb(134, 133, 133);
+  -moz-box-shadow: -2px 8px 17px -4px rgb(134, 133, 133);
+  align-items: center;
+  height: fit-content;
+}
+
+.reserveCard:hover svg {
+  cursor: pointer;
+}
+
+.checkInDate {
+  display: flex;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+.accIcon {
+  height: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .reserveCardContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .reserveCardContainer {
+    padding: 30px;
+  }
+
+  .checkInDate {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reserveCardContainer {
+    padding: 0;
+  }
+
+  .vhr {
+    display: none;
+  }
+}
