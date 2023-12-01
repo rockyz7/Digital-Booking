@@ -100,14 +100,11 @@ function Calendar({ styles, reservations, setToggleCalendar }) {
   const formatedNewReservation = formateDate(newReservation.slice(1, -1));
 
   const unavailableDates = (i, month, year) => {
-    const selected = format(
-      new Date(`${year}/${month}/${i + 1}`),
-      "yyyy/MM/dd"
-    );
-
+    const selectedDate = new Date(year, month - 1, i + 1);
+    const selected = format(selectedDate, "yyyy/MM/dd");
     const today = format(new Date(currentDate), "yyyy/MM/dd");
 
-    if (unavailable.includes(selected) || selected < today) {
+    if (unavailable.includes(selected) || selectedDate < new Date(today)) {
       return `${styles.unavailable}`;
     } else if (
       (!unavailable.includes(selected) &&
